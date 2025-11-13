@@ -9,4 +9,3 @@ This repository hosts the codes for plots generated using R programming language
 6. PCA Plot
 7. PCC Plot
 8. Scree Plot
-9. 
