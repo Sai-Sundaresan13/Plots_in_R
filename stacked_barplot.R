@@ -47,3 +47,6 @@ ggplot(counts_long, aes(x = Sample, y = Percent, fill = Category)) +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
+# NOTE: use different colour palettes by changing the scale_fill_manual(values = my_colors) to scale_fill_viridis_d(option = "plasma"), with options being: 
+# Other options: "magma", "inferno", "viridis", "cividis", "rocket", "mako".
+# scale_fill_brewer(palette = "Set3") for brewer palettes.
