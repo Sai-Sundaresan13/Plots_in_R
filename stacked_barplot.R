@@ -22,6 +22,17 @@ counts_long <- counts %>%
      group_by(Sample) %>%
      mutate(Percent = Counts / sum(Counts) * 100)
 
+# is the summary file has the sample names as rownames and the mapping types as the column names, use the below code
+counts_long <- counts %>%
+     pivot_longer(
+         cols = -Sample, 
+         names_to = "Category",
+         values_to = "Counts"
+     ) %>%
+     group_by(Sample) %>%
+     mutate(Percent = Counts / sum(Counts) * 100)
+
+
 View(counts_long)
 
 # create a colour palette
