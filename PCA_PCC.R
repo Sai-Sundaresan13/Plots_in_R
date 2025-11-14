@@ -83,21 +83,20 @@ clustering_distance_cols = "correlation"
 
 
 
-# PCA with outline
+# PCA with outline and change of legend name
 ggplot(pca_df, aes(PC1, PC2, fill = Condition, shape = Replicate)) +
-  geom_point(size = 3, colour = "black", stroke = 0.8) +   # black outline
-  scale_fill_brewer(palette = "Set2") +                    # simple palette
-  scale_shape_manual(values = c(21, 22, 23, 24)) +         # 4 easy fillable shapes
-  labs(
-    title = "PCA of Samples",
-    x = paste0("PC1: ", round(pca_var_percent[1], 1), "% variance"),
-    y = paste0("PC2: ", round(pca_var_percent[2], 1), "% variance")
-  ) +
-  theme_bw() +
-  theme(
-    legend.title = element_text(size = 10),
-    legend.text  = element_text(size = 9)
-  ) +
-  guides(fill = guide_legend(override.aes = list(shape = 21)))
-
++     geom_point(size = 3, colour = "black", stroke = 0.8) +   # black outline
++     scale_fill_brewer(palette = "Set2", name = "Time Point") +                    # simple palette
++     scale_shape_manual(values = c(21, 22, 23, 24)) +         # 4 easy fillable shapes
++     labs(
++         title = "PCA of Samples",
++         x = paste0("PC1: ", round(pca_var_percent[1], 1), "% variance"),
++         y = paste0("PC2: ", round(pca_var_percent[2], 1), "% variance")
++     ) +
++     theme_bw() +
++     theme(
++         legend.title = element_text(size = 10),
++         legend.text  = element_text(size = 9)
++     ) +
++     guides(fill = guide_legend(override.aes = list(shape = 21)))
 
