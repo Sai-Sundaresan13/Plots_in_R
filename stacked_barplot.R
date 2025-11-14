@@ -3,10 +3,10 @@ library(tidyverse)
 
 # ead the summary file for the counts
 counts <- read.table("filename.txt", 
-+                      header = TRUE, 
-+                      sep = "\t", 
-+                      row.names = 1, 
-+                      check.names = FALSE)
+                      header = TRUE, 
+                      sep = "\t", 
+                      row.names = 1, 
+                      check.names = FALSE)
 
 
 View(counts)
@@ -18,9 +18,9 @@ colnames(counts)[2] <- "SRR13197315"
 
 # create a new data frame(here a tibble) to calculate and store the percentages
 counts_long <- counts %>%
-+     pivot_longer(-Category, names_to = "Sample", values_to = "Counts") %>%
-+     group_by(Sample) %>%
-+     mutate(Percent = Counts / sum(Counts) * 100)
+     pivot_longer(-Category, names_to = "Sample", values_to = "Counts") %>%
+     group_by(Sample) %>%
+     mutate(Percent = Counts / sum(Counts) * 100)
 
 View(counts_long)
 
