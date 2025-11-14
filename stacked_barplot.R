@@ -14,7 +14,7 @@ View(counts)
 # the below 3 lines are for data cleaning. this is personlised for each file. Omit these line if there is no need for data cleaning
 counts <- counts %>% rownames_to_column(var = "Category")
 colnames(counts) <- sub("_.*", "", colnames(counts))
-colnames(counts)[2] <- "SRR13197315"
+colnames(counts)[2] <- "Name_i_want"
 
 # create a new data frame(here a tibble) to calculate and store the percentages
 counts_long <- counts %>%
